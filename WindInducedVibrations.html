@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Wind Vibrations | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Wind Induced Vibrations</h1> <!-- Change to match project -->
+			<h2></h2> <!-- Note this is the actual title of the header, NOT something to fill in -->
+			<p>
+			Research on wind-induced vibrations in our group has thus far dealt with primarily two aspects, both related to vibration control: (i) condition assessment of in-service tuned mass dampers (TMDs) and (ii) development of adaptive pendulum TMDs. These two issues were motivated through extensive field monitoring programs we conducted on the Apron Control Tower, located at Pearson International airport in Toronto, beginning in 2008. The fundamental issue we attempted to answer initially was whether the pendulum TMDs installed on the Apron Tower were performing as originally envisioned by the designers. The first difficulty we encountered was our inability to adequately arrest the motion of the two 25,000 kg masses on the tower. This meant that we needed to develop new ways to quantify the performance of the TMDs without arresting them. In the process, we were able to better model and understand the three-dimensional nature of pendulum TMDs and its effect on on the response of the flexible tower, and to develop a new way to undertake its condition assessment while under service without restraining the TMD motion. Finally, we developed an intelligent adaptive pendulum TMD which can tune itself to a limited range of optimal tuning values and conducted laboratory tests on this system. Main results from this work can be found in the following references.
+			</p>
+
+			<div class="research">
+				<div class="col-1"></div>
+				<div class="col-4">
+					<img src="Images/Research/WindInducedVibrations/Figure1.jpg" alt="Figure 1" /><br />
+					<span class="caption">Figure 1: Results of parametric study to determine the optimal parameters</span>
+				</div>
+				<div class="col-4">
+					<img src="Images/Research/WindInducedVibrations/Figure2.jpg" alt="Figure 2" /><br />
+					<span class="caption">Figure 2: Wind-tunnel study conducted at the RWDI test facility in Guelph, Ontario</span>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+		 <div class="research">
+				<img src="Images/Research/WindInducedVibrations/Figure3.png" alt="Figure 3" /><br />
+				<span class="caption">Figure 3: Water-tunnel experiments conducted at the University of Waterloo to understand the wake patterms behind towers and the effectiveness of tuned mass dampers in reducing wind-induced vibrations in flexible structures</span>
+			</div>
+
+			<h2>Publications</h2>
+			<ul>
+				<li> <strong>Roffel, A. J., </strong> Narasimhan, S. and Haskett, T. (2013), Performance of pendulum tuned mass dampers in reducing wind-induced vibrations in flexible structures, Journal of Structural Engineering, ASCE, DOI:
+					<a href="http://dx.doi.org/10.1061/%28ASCE%29ST.1943-541X.0000797" class="publications">http://dx.doi.org/10.1061/(ASCE)ST.1943-541X.0000797.</a>
+				</li>
+				<li> <strong> Roffel, A.J. </strong> and Narasimhan, S. (2014),
+					<a href="http://www.sciencedirect.com/science/article/pii/S0022460X14005367" class="publications">Extended kalman filter for modal identification of structures equipped with a pendulum tuned mass damper,</a>
+					 Journal of Sound and Vibration, Vol. 333, issue 23, pp. 6038–6056.
+				</li>
+				<li> <strong> Khierkhah, S., </strong>  Yarusevych, S. and Narasimhan, S. (2012),
+					<a href="http://www.sciencedirect.com/science/article/pii/S0889974611001460" class="publications">Orbiting response in vortex-induced vibrations of a two-degree-of-freedom pivoted circular cylinder</a>
+					 Fluids and Structures, Volume 28(1), pp. 343–358.
+				</li>
+				<li> <strong>Roffel, A., Lourenco, R., </strong> Narasimhan, S., and Yarusevych, S. (2011),
+					<a href="http://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29ST.1943-541X.0000286" class="publications">Adaptive compensation for detuning in pendulum tuned mass dampers,</a>
+					 ASCE Journal of Structural Engineering, 137(2), pp. 242-251.
+				</li>
+			</ul>
+
+			<!-- <h2>Students</h2>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					Student name
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					Student name
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					Student name
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div> -->
+
+			<h2>Collaborators</h2>
+			<ul>
+				<li><a href="https://uwaterloo.ca/mechanical-mechatronics-engineering/people-profiles/serhiy-yarusevych">Serhiy Yarusevych,</a>, University of Waterloo, Mechanical and Mechatronics Engineering</li>
+			</ul>
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>

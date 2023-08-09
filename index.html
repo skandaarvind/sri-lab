@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Home | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div id="banner" class="col-10">
+			<img src="Images/Group/banner-photo-2019.jpg" style="max-width:100%;" alt="Group photograph" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>About Us</h1>
+
+			<div class="videoWrapper">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/hipoQhqau5E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+
+			<p>
+			Welcome to our research page at the University of Waterloo! Here you’ll find information about the members of our team, various research projects
+			we are working on or have executed in the past, a description of our facilities, and media articles where our research has been featured. We try to
+			update this site with new information at least annually, so if you would like to know more about any of our specific current activities please feel
+			free to email the team members working on the topic. Our research is supported by various federal, provincial and industrial partners, including
+			NSERC (Discovery, industrial partnerships and Canada Research Chairs programs), CFI and OCE.
+			</p>
+
+			<p>
+ 			The main goal of our research is to better understand the condition of operational civil and mechanical infrastructure using sensors and data. In pursuit of this objective, we are working on the development of sensor systems which can measure the state of infrastructure non-destructively and the analytical and algorithmic tools necessary to process and interpret actionable information from such data. In terms of specific projects, amongst others, you will find here information regarding the ground-based robots we have developed which can enable a wide range of inspection related tasks for civil infrastructure, a novel IoT inspired leak detection system for water distribution networks and signal processing algorithms to enable condition assessment of rotating machinery and bridges using vibration data.
+			</p>
+
+			<p><strong>
+			Note to prospective graduate students: Please use <a href="https://uwaterloo.ca/engineering/contact-faculty-member-about-graduate-studies" target="_blank" style="color: rgb(178,40,45); text-decoration: underline;">this form</a> to contact us about joining our group.
+			</strong></p> <!-- Move this to contact page? -->
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<a href="news.html"><h1>News</h1></a>
+			<div class="row">
+				<div class="col-4">
+					<a href="https://kitchener.ctvnews.ca/robots-make-bridge-inspections-safer-and-cheaper-says-researchers-1.4506907" class="news-story">
+						<span class="news-date">Jul. 13, 2019</span>
+						<h2>Robots make bridge inspections safer and cheaper, says researchers</h2>
+						<img src="Images/News/BridgeInspectionCTV.png" alt="Bridge Inspection CTV" style="max-width:100%;" />
+						<p>University of Waterloo researchers say they have developed a system that will help make bridge inspections more accurate and accessible....</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-4">
+					<a href="https://www.cbc.ca/news/canada/kitchener-waterloo/robot-bridge-inspections-1.5220741" class="news-story">
+						<span class="news-date">Jul. 23, 2019</span>
+						<h2>There's more to bridge inspections that meets the eye</h2>
+						<img src="Images/News/BridgeInspectionCBC.png" alt="Bridge Inspection CBC" style="max-width:100%;" />
+						<p>A team of researchers from Waterloo University have designed a robot that they say performs bridge inspections faster, more reliably and at a lower cost than ever before....</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<a href="https://uwaterloo.ca/global-impact/rise-of-women-stem" class="news-story">
+						<span class="news-date">Dec. 28, 2018</span>
+						<h2>The Rise of Women in STEM</h2>
+						<img src="Images/News/The_Rise_of_Women_in_STEM.jpg" alt="Waterloo Global Impact" style="max-width:100%;" />
+						<p>Back when she was 10 years old, Pampa Dey stood inside the sweet shop her father owned in a small, remote village on the eastern tip of India, and did what she did best...</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-4">
+					<a href="news.html">
+					<span class="news-date" style="visibility:hidden;">filler</span>
+					<h2 style="visibility:hidden;">filler</h2>
+					<h2 style="visibility:hidden;">filler</h2>
+						<div class="news-block">
+								<span class="caption" style="line-height:1.3em">VIEW ALL</span>
+								<span class="caption" style="font-size:14pt; font-weight: bold; line-height:1.3em">NEWS</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br />
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>

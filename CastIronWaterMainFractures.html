@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Cast Iron Fractures | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Mechanistic Framework and Risk Assessment for Analyzing Cast Iron Water Main Fractures</h1> <!-- Change to match project -->
+			<!-- <h2>Project Information</h2> --><!-- Note this is the actual title of the header, NOT something to fill in -->
+			<p>
+			Content Coming Soon...
+			</p>
+
+			<!-- <div class="research">
+				<img src="Images/Research/AutonomousVehicleDamping/Autonomous_Vehicles_1.jpg" alt="Autonomous vehicle in lab on shake table" /><br />
+				<span class="caption">Caption on image</span>
+			</div>
+
+			<p>
+			More information about project
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/AutonomousVehicleDamping/Autonomous_Vehicles_1.jpg" alt="Autonomous vehicle in lab on shake table" /><br />
+				<img src="Images/Research/AutonomousVehicleDamping/Autonomous_Vehicles_1.jpg" alt="Autonomous vehicle in lab on shake table" /><br />
+				<span class="caption">Caption on image</span>
+			</div>
+
+			<p>
+			Last bit of information.
+			</p>
+
+			<h2>Publications</h2>
+			<ul>
+				<li> <strong> Prakash, G., </strong> Narasimhan, S., and  Pandey, M. D.  (2018),
+					<a href="http://journals.sagepub.com/doi/abs/10.1177/1475921718758517" class="publications">A probabilistic approach to remaining useful life prediction of rolling element bearings.</a>
+					 Journal of Structural health monitoring,  doi: 10.1177/1475921718758517. </li>
+			</ul>
+
+			<h2>Students</h2>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html" style="display:inline-block;">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					<p class="projectStudents">Student name</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html" style="display:inline-block;">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					<p class="projectStudents">Student name</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html" style="display:inline-block;">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					<p class="projectStudents">Student name</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<h2>Collaborators</h2>
+			<ul>
+				<li>Person 1, Affiliation</li>
+				<li>Person 2, Affiliation</li>
+			</ul> -->
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br />
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>

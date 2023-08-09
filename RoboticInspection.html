@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Robotic Inspections | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Inspection of Infrastructure with Mobile Robotics</h1> <!-- Change to match project -->
+
+			<div class="row">
+				<div class="col-1"></div>
+					<div class="col-8">
+						<iframe width="100%" height="450" src="https://www.youtube.com/embed/YCihWIBIGZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<!-- <span class="caption">Caption</span> -->
+					</div>
+				<div class="col-1"></div>
+			</div>
+
+			<h2>Motivation</h2>
+
+			<p>
+			Modern day infrastructure inspection is commonly done using human visual inspections. Human inspectors have a difficult time detecting and measuring quantity or size
+			of defects on a large scale. This problem is often atttributed to lack of large scale measurement tools that can be used to quantify objects of interest rapidly.
+			<br>
+			Other problems with manual inspection include:
+
+			<li> Subjectivity </li>
+			<li> Accessibility of elements </li>
+			<li> Inspector fatigue </li>
+			<li> Inconsistency among inspectors </li>
+
+			<br>
+			<b>E.g., Bridge Inspections:</b>
+			Bridge inspections in Ontario (similar to all Canada and the USA), are performed on a bi-annual basis or more frequently as warranted by the condition of a particular bridge.
+			Inspections are performed by human inspectors that visually look for defects of interest including cracks, concrete spalls, concrete delaminations,
+			corrosion, etc. The size and quantity of these defects are estimated and recorded. These subjective quantity estimates are combined into an overall
+			condition rating of the bridge or element. The precise change in defect size and its affect on the structure's integrety is not explicitly calculated.
+			Furthermore, to achieve a reasonable degree of accuracy with respect to defect detection and quantification, inspectors are expected to perform the
+			inspections from no more than an arm's length away from the elements being assessed. This requirement is not always adhered to as a result of accessibility
+			issues combined with lack of inspection funds or potential traffic disruption (see Fig. 1 and 2).
+			</p>
+
+			<div class="research row">
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure1.jpg" alt="Figure 1" /><br />
+					<span class="caption">Figure 1: Bridge Master being used for inspection on the Conestogo River Bridge.</span>
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure2.jpg" alt="Figure 2" /><br />
+					<span class="caption">Figure 2: Inspection of the Gardiner Expressway bridge.</span>
+				</div>
+			</div>
+
+			<p>
+				This research work aims to use mobile robotics to help suppliment or replace human visual inspection of infrastructure.
+				We primarily focus on	inspection of the following types of infrastructure:
+
+				<li>Bridges</li>
+				<li>Parking Structures</li>
+				<li>Nuclear Facilities</li>
+				<li>General Industrial Plants</li>
+
+				<br>
+				The benefits of using robotics for inspection include:
+
+				<br><br>
+				<li>Repeatability</li>
+				<li>Increased accuracy and detail</li>
+				<li>Elimination of user subjectivity</li>
+				<li>Increase accessibility</li>
+
+				<br>
+				We are studying the use of unmanned ground vehicles (UGVs), unmanned aerial vehicles (UAVs) and unammed surface vessels (USVs).
+				The focus of our work in on the sensor package, along with all software required to perform such inspections. The goal of this work
+				is to have a sensor and software suite that can be used on any robotic platform that best suits the application
+				<br>
+				Our core contribution is the combination of 3D lidar maps with images and image analysis (using AI or standard image processing) for fully automated
+				defect detection and quantification. In our work, defects are located in the images and quantified/tracked using the point cloud map.
+			</p>
+
+			<h2>Robots</h2>
+
+			<p>
+			Three prototype inspection robots have been developed for the purpose of infrastructure inspection research.
+			All sensors are time synchronized and calibrated intrinsically for internal parameter estimation, and extrinsically
+			for estimates of the physical transformation between each sensor frame.
+			</p>
+
+			<h3>Husky UGV (Inspector-Gadget)</h3>
+			<br><br>
+			<div class="research row">
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure3.jpg" alt="Figure 3" /><br />
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure4.jpg" alt="Figure 4" /><br />
+				</div>
+			</div>
+
+			<p>
+			<span class="caption">Figure 3 and 4: Husky based inspection UGV with sensors including (A) Vertical Lidar (VLP-16 HiRes) (B) Horizontal Lidar (VLP-16 Lite)
+				(C) Swift Nav Piksi-Multi RTK GPS (D) 3 Flir BlackflyS machine vision cameras with narrow FOV and Fisheye lenses (E) Flir ADK Infrared Spectrum Camera (F)
+				Inertial Measurement Unit (UM7) (G) Custom PCBs for data i/o and hardware triggering</span>
+			</p>
+
+			<h3>Jackal UGV (RobEn)</h3>
+			<br><br>
+			<div class="research row">
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure5.jpg" alt="Figure 5" /><br />
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure6.jpg" alt="Figure 6" /><br />
+				</div>
+			</div>
+
+			<p>
+			<span class="caption">Figure 5 and 6: Jackal based inspection UGV with sensors including (A) Rotating Lidar (VLP-16) (B) Flir Ladybug5+
+				(C) GPS (D) IMU </span>
+			</p>
+
+			<h3>King Fisher USV</h3>
+			<br><br>
+			<div class="research row">
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure7.jpg" alt="Figure 7" /><br />
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure8.jpg" alt="Figure 8" /><br />
+				</div>
+			</div>
+
+			<p>
+			<span class="caption">Figure 7 and 8: King Fisher based inspection USV with the same sensor as the
+			Husky UGV, with an additional multi-beam sonar for underwater mapping.</span>
+			</p>
+
+			<p>
+			The above robotic platforms are specifically designed for ground/surface based infrastructure inspection.
+			All sensors are time synchronized and calibrated intrinsically for internal parameter estimation, and extrinsically
+			for estimates of the physical transformation between each sensor frame.
+			</p>
+
+			<h2>Mapping Results</h2>
+			<p>
+			The mapping procedure currently works in two separate processes. First, an online SLAM solution is
+			implemented to do real-time, lower quality mapping. This allows the operator to view the map as it is being generated so
+			that they can ensure full coverage of the area of interest. After data collection has completed, the map is automatically refined
+			using a batch optimization approach implemented with <strong><a href="https://bitbucket.org/gtborg/gtsam">GTSAM</a></strong>.
+			Online mapping is currently performed using an EKF, or <strong><a href="https://github.com/BEAMRobotics/loam_velodyne">LOAM</a></strong> (Lidar Odometry and Mapping). We are currently working on a
+			fixed-lag smoother implementation for better online mapping.
+			</p>
+
+			<h3>Full Batch SLAM</h3>
+			<br><br>
+			<div class="research row">
+				<div class="col-5">
+					<iframe width="100%" height="350" src="https://www.youtube.com/embed/c9kDPVoyX4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">Full batch SLAM results from RobEn in the UW structures lab, including colour from Ladybug camera.</span>
+				</div>
+				<div class="col-5">
+					<iframe width="100%" height="350" src="https://www.youtube.com/embed/41d3B3-4374" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">Full batch SLAM results from Inspector Gadget on a parking garage in Kitchener, ON.</span>
+				</div>
+			</div>
+
+			<h3>Online Mapping</h3>
+			<br><br>
+			<div class="research row">
+				<div class="col-5">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/gI92yZ1T9zY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">Online Mapping of the Conestogo River bridge in Waterloo, ON. Inspector Gadget</span>
+				</div>
+				<div class="col-5">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/oIAVvEBy428" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">Online Mapping of the Fairway Road bridge in Kitchener, ON. with Inspector Gadget</span>
+				</div>
+			</div>
+
+			<p>
+			Figure 6 shows the results from the Conestogo Bridge mapping when compared to a baseline scan using a
+			<strong><a href="http://www.faro.com/en-gb/products/construction-bim-cim/faro-focus/"> Faro Focus </a></strong>.
+			Here, we take cross-sections of the maps generated by our platform (green) and compare to cross sections from the
+			Faro scanner (Red) at the same locations on the bridge. This illustrates the accuracy capabilities of this preliminary
+			mapping software.
+			<br><br>
+			It should also be noted that the time to generate this map with our platform is on the order of
+			5 to 10 minutes whereas the time required to scan the same area with the Faro took us approximately two hours.
+			</p>
+
+			<div class="research row">
+				<div class="col-2"></div>
+					<div class="col-6">
+						<img src="Images/Research/RoboticInspection/Figure9.jpg" alt="Figure 9" /><br />
+						<span class="caption">Figure 9: Scan results of out platform compared to Faro Focus on the Conestogo River Bridge.</span>
+					</div>
+				<div class="col-2"></div>
+			</div>
+
+			<h2>Inspection Results</h2>
+			<p>
+			The core contribution of our work is the extension of 3D mapping to perform automated inspection. To do this, we collect
+			RGB and IR images that are synchronized with the lidar scans. Based on our pose estimates from SLAM and the extrinsic
+			calibrations, we can perform image analysis on to detect defect/objects of interest and project that information to the point cloud.
+
+			<br><br>
+			Our point clouds contain not only x,y,z,r,g,b,i (thermal intensity) information, but each point also contains
+			a probability of the point belonging to a specific class. Classes for bridge inspection for example are:
+			(i) sound concrete, (ii) crack, (iii) delamination, (iv) spall, and (v) patch. We then group the points belonging
+			to each class into defect objects in order to calculate and track dimensions of each defect.
+			</p>
+
+			<h3>Case Study: Conestogo River Bridge Delamination Detection</h3>
+
+			<p>
+			An example use case of this technology was the delamination survey of the Conestogo River Bridge. A delamination is a
+			patch of concrete that has detached from the rest of the structure but has not fallen off. Delaminations introduce air
+			voids which act as insulating layers that alter heat travel through the structure which can be seen in infrared images.
+
+			In this example, we use image processing tools to detect the delaminations in the infrared images (Fig. 10). The images are labeled
+			on a pixel-wise basis and these "delaminated" pixels are projected onto the point cloud using ray-tracing. Since the point
+			cloud is to-scale, we can then directly measure the size of the defects (Fig. 11).
+			</p>
+
+
+			<div class="research row">
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure10.jpg" alt="Figure 10" /><br />
+					<span class="caption">Figure 10: Infrared imaged with delamination mask.</span>
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/RoboticInspection/Figure11.jpg" alt="Figure 11" /><br />
+					<span class="caption">Figure 11: Conestogo River bridge coloured with the infrared images and delamination
+					spots coloured in red.</span>
+				</div>
+			</div>
+
+			<br><br>
+			<h3>Case Study: Parking Garage </h3>
+			<p>
+			Another example use case for this technology is concrete patch detection and quantification. For this project, we scanned
+			a parking garage in Kitchener, ON. The RGB images from this scan were used to detect concrete patches which were then
+			projected to the point cloud map and coloured in red (Fig. 12). In this case, we also clustered together
+ 			the points associate with each patch and calculated the area of each patch. We were then able to produce an inspection
+			report with all patches and their size. This whole inspection process was automated
+			(besides the data collection where the robot was driven manually).
+			</p>
+
+			<div class="research row">
+				<div class="col-1"></div>
+					<div class="col-8">
+						<img src="Images/Research/RoboticInspection/Figure12.jpg" alt="Figure 12" /><br />
+						<span class="caption">Inspection results of a parking garage in Kitchener, ON., showing the detected patches and a list of their measured sizes.</span>
+					</div>
+				<div class="col-1"></div>
+			</div>
+
+			<br><br>
+			<div class="research row">
+				<div class="col-2"></div>
+					<div class="col-6">
+						<iframe width="100%" height="450" src="https://www.youtube.com/embed/qQ8iVaxPjQQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<span class="caption">Video fly-through showing the mapping and inspection results of a parking garage in Kitchener, ON.</span>
+					</div>
+				<div class="col-2"></div>
+			</div>
+
+			<h2>Autonomy</h2>
+
+			<p>
+			Automating data collection for inspection is another area of focus of this work. We have worked on two different GPS waypoint navigation
+			packages in ROS that can be used to automate data collection. Both packages were created in collaboration with
+			<strong><a href="https://clearpathrobotics.com/">Clearpath Robotics</a></strong>.
+			</p>
+
+			<h3>Open Source Waypoint Navigation</h3>
+
+			<p>
+			The first implementation was stictly using open-source ROS packages with
+			minimal custom nodes. 			The waypoint navigation package was built to work with Clearpath robots having a GPS, IMU, 2D front facing Lidar, and wheel odometry. It allows a user to either
+						input the GPS waypoints, or collect the waypoints with the robot ahead of time. Obstacle avoidance is also fully incorporated into the software. Full tutorials can be found
+						<strong><a href="http://www.clearpathrobotics.com/assets/guides/husky/HuskyGPSWaypointNav.html">here</a></strong>, and the source code can be found
+						<strong><a href="https://github.com/nickcharron/waypoint_nav">here</a></strong>.
+			</p>
+
+			<p>
+			Video demonstrations of this package are shown below. The video on the left shows standard waypoint navigation with obstacle avoidance. The video on the
+			right shows how it can be combined with a mapping kit for autonomous mapping.
+			</p>
+
+			<div class="research row">
+				<div class="col-5">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/2AUx9podA7c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">GPS waypoint navigation results, with obstacle avoidance.</span>
+				</div>
+				<div class="col-5">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/V5jG9hEXSV8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<span class="caption">Autonomous 3D mapping with GPS waypoint navigation and Mandala-Mapping kit.</span>
+				</div>
+			</div>
+
+			<br>
+			<h3>Proprietary Waypoint Navigation</h3>
+
+			<p>
+			Further development was performed with Clearpath Robotics to release a more reliable and user-friendly package.
+			For information on purchasing this package,	see Clearpath's <strong><a href="https://clearpathrobotics.com/gps-waypoint-navigation-package/">website</a></strong>. Video demonstations are shown below.
+			</p>
+
+			<div class="research row">
+				<div class="col-2"></div>
+					<div class="col-6">
+						<iframe width="100%" height="450" src="https://www.youtube.com/embed/54w4P9o-diU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<span class="caption">GPS waypoint navigation package offered by Clearpath Robotics</span>
+					</div>
+				<div class="col-2"></div>
+			</div>
+
+			<h2>Publications</h2>
+			<li> <strong> Charron, N., McLaughlin, E., Phillips, S., Goorts, K. </strong> Narasimhan, S., and Waslander, S. L.  (2019).
+					<a href="https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29ST.1943-541X.0002404" class="publications">Automated bridge inspection using mobile ground robotics.</a>
+					Journal of Structural Engineering, ASCE,  vol. 145, no. 11.</li>
+			<li> <strong> Phillips, S. </strong> Narasimhan, S.  (2019).
+					<a href="https://ascelibrary.org/doi/full/10.1061/%28ASCE%29BE.1943-5592.0001442" class="publications">Automating data collection for robotic bridge inspections.</a>
+					Journal of Bridge Engineering, ASCE,  vol. 24, no. 8.</li>
+			<li> <strong> Phillips, S., Charron, N, McLaughlin, E. </strong> and Narasimhan, S. (2019).
+					Infrastructure Mapping and Inspection using Mobile Ground Robotics.
+					In Proceedings of: 12th International Workshop on Structural Health Monitoring (IWSHM 2019)., Stanford, CA., USA, Sep. 10-12. </li>
+			<li> <strong> McLaughlin, E., Charron, N. </strong> and Narasimhan, S. (2019).
+				 <a href="https://www.iaarc.org/publications/2019_proceedings_of_the_36th_isarc/combining_deep_learning_and_robotics_for_automated_concrete_delamination_assessment.html" class="publications">Combining Deep Learning and Robotics for Automated Concrete Delamination Assessment.</a>
+				 In Proceedings of 36th International Symposium on Automation and Robotics in Construction (ISARC), Banff, Alberta, May 22 - 24. </li>
+
+			<!-- <ul>
+				<li> <strong> Students </strong> Profs  (2018),
+					<a href="link" class="publications">Title.</a>
+					 JournalAndDOI </li>
+			</ul> -->
+
+			<h2>Students</h2>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/nicholasccharron/" style="display:inline-block;">
+					<img src="Images/Headshots/NCharron.jpg" alt="Nicholas Charron" />
+					<p class="projectStudents">Nicholas Charron</p>
+					</a>
+				</div>
+				<div class="col-2"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/sjphilliwaterloo/home" style="display:inline-block;">
+					<img src="Images/Headshots/SPhillips.jpg" alt="Stephen Phillips" />
+					<p class="projectStudents">Stephen Phillips</p>
+					</a>
+				</div>
+				<div class="col-2"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/uwaterloo.ca/emmclaugh/home" style="display:inline-block;">
+					<img src="Images/Headshots/EMclaughlin.jpg" alt="Evan McLaughlin" />
+					<p class="projectStudents">Evan McLaughlin</p>
+					</a>
+				</div>
+				<div class="col-2"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/view/alexanderthoms/home">
+					<img src="Images/Headshots/AThoms.jpg" alt="Alexander Thoms" /><br />
+					<p class="projectStudents">Alexander Thoms</p>
+					</a>
+				</div>
+				<div class="col-2"></div>
+			</div>
+
+			<h2>Collaborators</h2>
+			<ul>
+				<a href="https://uwaterloo.ca/mechanical-mechatronics-engineering/people-profiles/steven-waslander">
+				<li><strong>Steven Waslander</strong>, University of Waterloo, Mechanical and Mechatronics Engineering</li>
+				</a>
+			</ul>
+
+			This project is joint between the Waterloo Autonomous Vehicles (WAVE) Lab, lead by Dr. Waslander
+			and the SDIC Lab. Shared resources, including software and hardware, between the WAVE and SDIC
+			labs have been extremely valuable in this project. The WAVE lab focuses on full autonomy of ground and aerial
+			vehicles including research on SLAM, control and perception. For more information on the WAVE lab,
+			please visit the <strong><a href="http://wavelab.uwaterloo.ca/"> WAVE Lab Research Page</a><strong>.
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br />
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>

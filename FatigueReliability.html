@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Fatigue Reliability | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Probabilistic Fatigue Reliability Assessment of Steel Bridges</h1> <!-- Change to match project -->
+			<!-- <h2>Seismic Protection</h2> --><!-- Note this is the actual title of the header, NOT something to fill in -->
+			<p>
+				According to the American Society of Civil Engineers (ASCE) Committee for Fatigue and Fracture Reliability, 80–90 percent of failures in steel structures are related to fatigue and fracture. Therefore, fatigue and fracture reliability is one of the most important concern for the steel bridges.
+				<br><br>
+				For many of the steel bridges, an unsupported web gap (see Figure 1) exists between the end of the connection plate and the flange of the girder. Prior to the late 1970’s, it was a common practice to avoid transverse welds on the flanges. Under the live load-induced forces the two main girder of bridge often experiences a differential settlement, which results in tensile stresses and moment in the diaphragm. Due to this additional stress, the unsupported web gap is subject to out-of-plane distortion as depicted in Figure 1.
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/FatigueReliability/Figure1.png" alt="Figure 1" /><br />
+				<span class="caption">Figure 1: Fatigue crack  in  steel bridge  girders</span>
+			</div>
+
+			<p>
+				<br>
+				These stresses have caused horizontal cracks in the web or the web-to-flange welds and horizontal or vertical cracks at the end of the web-to-connection plate welds in many of the steel bridges. Moreover, the length of crack grows with repeated fatigue loading. Some of the typical cracks resulting from the web gap distortion in a welded plate girder is shown in Figure 2.<br>
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/FatigueReliability/Figure2.png" alt="Figure 2" /><br />
+				<span class="caption">Figure 2 Typical cracks  in  steel  bridges girders</span>
+			</div>
+
+			<p>
+				<br>
+				In this project, bridge reliability will be assessed probabilistically based on condition monitoring data. The main goals of this project are to:<br>
+				<br>
+				•	Propose a framework that uses the strain data for reliability assessment of steel bridges<br>
+				•	Develop a probabilistic model, which can be used to estimate the reliability index or remaining fatigue life of an existing steel bridge<br>
+				<br>
+				The overall approach that will be undertaken in this project is illustrated in Figure 3, which consists of the following four key steps:<br>
+				<br>
+				•	Investigation of critical bridge component and strain-gauge placement<br>
+				•	Determination of stress range bin histograms using rain-flow counting method<br>
+				•	Estimation of stress range probability density function for binned histograms, and <br>
+				•	Probabilistic reliability assessment <br>
+
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/FatigueReliability/Figure3.png" alt="Figure 3" /><br />
+				<span class="caption">Figure 3 The proposed probabilistic approach for reliability assessment</span>
+			</div>
+
+			<h2>Publications</h2>
+			<ul>
+				<a href="https://doi.org/10.1007/s13349-019-00327-w" class="publications">A two-phase model to predict the remaining useful life of corroded reinforced concrete beams.</a>
+				Journal of Civil Structural Health Monitoring,  vol. 9, no. 2., pp 183–199</li>
+			</ul>
+
+			<h2>Students</h2>
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/gprakash66/" style="display:inline-block;">
+					<img src="Images/Headshots/GPrakash.jpg" alt="Guru Prakash" />
+					<p class="projectStudents">Guru Prakash</p>
+					</a>
+				</div>
+				<!-- <div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					Student name
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="student-website.html">
+					<img src="Images/Headshots/DDowling.jpg" alt="Student name" />
+					Student name
+					</a>
+				</div> -->
+				<div class="col-4"></div>
+			</div>
+
+			<h2>Collaborators</h2>
+			<ul>
+				<li><a href="https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey">Mahesh Pandey</a>, University of Waterloo, Civil and Environmental Engineering</li>
+				<!-- <li><a href="https://uwaterloo.ca/civil-environmental-engineering/about/people/dipanjan-basu">Dipanjan Basu</a>, University of Waterloo, Civil and Environmental Engineering</li> -->
+			</ul>
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br />
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Structural Dynamics Identification and Controls (SDIC) Lab at the University of Waterloo">
+	<meta name="keywords" content="Structural, Dynamics, Identification, Controls, SDIC, University of Waterloo, UW, UWaterloo">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Fault Diagnostics | SDIC Lab | University of Waterloo</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest">
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="height: 5.5rem; text-align:center;" alt="SDIC Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="publications.html">publications</a></li>
+							<li><a href="facilities.html">facilities</a></li>
+							<li><a href="news.html">news</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://uwaterloo.ca/"><img src="Images/Logos/UniversityOfWaterloo_logo_horiz_rev_rgb_cropped.png" style="height: 2.688rem; text-align:center;" alt="UW Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 125px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+						<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="publications.html">publications</a></li>
+				<li><a href="facilities.html">facilities</a></li>
+				<li><a href="news.html">news</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar1"></div>
+		<div id="colorbar2"></div>
+		<div id="colorbar3"></div>
+		<div id="colorbar4"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Autonomous Methods for Condition-based Maintenance of Rotating Machinery</h1> <!-- Change to match project -->
+			<!-- <h2>Introduction</h2>--> <!-- Note this is the actual title of the header, NOT something to fill in -->
+
+			<div class="row">
+				<div class="col-1"></div>
+					<div class="col-8">
+						<iframe width="100%" height="450" src="https://www.youtube.com/embed/iTfib1ap2Uk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<!-- <span class="caption">Caption</span> -->
+					</div>
+				<div class="col-1"></div>
+			</div>
+
+			<p>
+			Condition-based maintenance (CBM) is a maintenance strategy where maintenance decisions are made based on the actual health of the monitored system. In CBM, the health of the monitored system is typically inferred through some surrogate measure of degradation (i.e. vibration or temperature). It consists of three main steps: data acquisition, data processing and maintenance decision-making. Diagnostics and prognostics are two important aspects of a CBM Methodology (see Figure 1).
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/MachineFaultDiagnostics/Figure1.jpg" alt="CBM Steps" /><br />
+				<span class="caption">Figure 1: Key Steps in CBM</span>
+			</div>
+
+			<p>
+				We are currently we are investigating critical airport infrastructure under the CBM framework, namely the LINK Train automated people mover (APM) system and baggage handling systems (BHS) located in Toronto’s Pearson International Airport, Canada, which is managed and operated by the Greater Toronto Airports Authority (GTAA). The main goals of this project include:
+				<br>
+				<li>Development of blind algorithms for performing fault detection on non-stationary rotating machinery, that are suitable for implementation in autonomous or semi-autonomous CBM frameworks. The primary focus here is to develop new vibration analysis methods that scalable and robust, by removing the dependency on prior knowledge found in many contemporary vibration analysis techniques. Key methods include cluster-based approaches using mean shift clustering and Gaussian mixture models in conjunction with statistical process control methods for threshold setting and fault detection.  </li>
+				<li>Development of novel degradation models which can be used to estimate the remaining lifetime of the system. Key methods being pursued in prognosis are data-driven methods such as hidden Markov models (HMMs) and Bayesian inference techniques.</li>
+				<li>Software and hardware development for integrated, autonomous fault detection and prognosis CBM framework</li>
+			</p>
+
+			<div class="research">
+				<img src="Images/Research/MachineFaultDiagnostics/Figure2.png" alt="Fig2" /><br />
+				<span class="caption">Figure 2: CBM implementation at Toronto's Pearson Airport’s LINK Train APM gearbox illustrating the accelerometers and real-time monitoring hardware (NI cRIO)</span>
+			</div>
+
+			<br>
+
+			<div class="research">
+				<img src="Images/Research/MachineFaultDiagnostics/Figure3.png" alt="Fig3" /><br />
+				<span class="caption">Figure 3: Components of autonomous CBM platform – client and server tasks</span>
+			</div>
+
+			<br>
+
+			<div class="row">
+				<div class="col-5">
+					<img src="Images/Research/MachineFaultDiagnostics/Figure4a.png" alt="Fig4a" /><br />
+				</div>
+				<div class="col-5">
+					<img src="Images/Research/MachineFaultDiagnostics/Figure4b.png" alt="Fig4b" /><br />
+				</div>
+				<span class="caption">Figure 4: APM vibration data and corresponding spectrogram illustrating non-stationarities in both time and frequency</span>
+			</div>
+
+			<br>
+
+			<div class="research">
+				<img src="Images/Research/MachineFaultDiagnostics/Figure5.png" alt="Fig5" /><br />
+				<span class="caption">Figure 5: Blind clustering of condition indicators extracted from APM vibration data using Gaussian mixture method. Non-stationary data is decomposed into discrete stationary clusters that can be used for binary fault detection. </span>
+			</div>
+
+			<br>
+
+			<div class="research">
+				<img src="Images/Research/MachineFaultDiagnostics/Figure6.png" alt="Fig6" /><br />
+				<span class="caption">Figure 6: Hierarchical Bayesian degradation model for (a) 40 and (b) 60 percent of degradation signal </span>
+			</div>
+
+			<h2>Publications</h2>
+			<ul>
+				<li> <strong> Fong, S., Harmouche, J., </strong> Narasimhan, S., and Antoni, J. (2019).
+						Mean Shift Clustering-Based Analysis of Non-Stationary Vibration Signals for Machinery Diagnostics.
+						IEEE Transactions on Instrumentation and Measurement, In press, accepted Sep 8, 2019.</li>
+				<li> <strong> Fong, S., Ashasi-Sorkhabi, A., Prakash, G., Riseborough, M. </strong> and Narasimhan, S. (2018).
+					 Automated Condition-Based Monitoring of Automated People Movers.
+					 In Proceedings of: 16th International Conference on Automated People Movers and Automated Transit Systems, Tampa, Florida, USA, April 29 - May 2. </li>
+
+				<li> <strong> Fong, S., Ashasi-Sorkhabi, A., Prakash, G.,  </strong> ., Narasimhan, S. and Riseborough, M. (2018).
+					Automated Condition-Based Monitoring of Automated People Movers. Paper presented at 16th International Conference on Automated People Movers and Automated Transit Systems: Tampa, Florida. doi:10.1061/9780784481318
+				</li>
+
+				<li> <strong> Ashasi-Sorkhabi, A., Fong, S., Prakash, G.  </strong> . and Naraimshan, S. (2017),
+					<a href="https://www.phmsociety.org/node/2245" class="publications">A condition based maintenance implementation for an automated people mover gearbox,</a>
+					International Journal of Prognostics and Health Management: Vol 8 (Special Issue on railways & Mass Transportation) 020, pages: 13
+				</li>
+
+				<li> <strong> Sadhu, A., Prakash, G. </strong> and Narasimhan, S.  (2016),
+					<a href="http://jvc.sagepub.com/content/early/2016/01/21/1077546315627934.refs" class="publications">A hybrid hidden Markov model towards fault detection of rotating components,</a>
+					Journal of Vibration and Control, doi: 1077546315627934. </li>
+				<li> <strong> Sadhu, A., Prakash, G. </strong> and Narasimhan, S.  (2016),
+					<a href="http://journals.sagepub.com/doi/abs/10.1177/1077546315627242" class="publications">Fault detection of gearboxes using synchro-squeezing transform,</a>
+					Journal of Vibration and Control, doi: 10.1177/1077546315627242.</li>
+			</ul>
+
+			<h2>Students</h2>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/stanleyhfong/home" style="display:inline-block;">
+					<img src="Images/Headshots/SFong.jpg" alt="Stan Fong" />
+					<p class="projectStudents">Stan Fong</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://scholar.google.ca/citations?hl=en&user=tIPoKpsAAAAJ&view_op=list_works&citft=2&email_for_op=AliAshasi2010%40gmail.com&gmla=AJsN-F7yXlNiG1R7Hr1imT3-cOkf_W7gFE17bjII-2uSiogIe9xFdS2aZQWh64Aoeq0Rs8ULTrjI_qVvThIn-PH98TldfWgZtzG_QsQQTmhDabpEnpf6XQ3ml0V6T4i41X1cWzb08z2Tb1lDodtXNJ9bqooie-4ovTtNeMwo3pPuYXn-kxc5Vdj4wYW_M1z3VZ7wLS3He4xKJXZJ7WYJTK-j99LLwJmZu5sE4Xm2r8BFMoXfc9eDmpFDD2dGtpEWS75Ua5vrMQ4U" style="display:inline-block;">
+					<img src="Images/Headshots/Alumni/AAshashiSorkhabi.jpg" alt="Ali Ashasi-Sorkhabi" />
+					<p class="projectStudents">Ali Ashasi-Sorkhabi</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/gprakash66/" style="display:inline-block;">
+					<img src="Images/Headshots/GPrakash.jpg" alt="Guru Prakash" />
+					<p class="projectStudents">Guru Prakash</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<!-- <h2>Collaborators</h2>
+			<ul>
+				<li>Person 1, Affiliation</li>
+				<li>Person 2, Affiliation</li>
+			</ul> -->
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br />
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				Engineering 2, Room 2342<br />
+				200 University Avenue West<br />
+				Waterloo, ON, Canada N2L 3G1
+			</div>
+			<div class="col-2">
+				<a href="http://www.civil.uwaterloo.ca/snarasim/"><img src="Images/Logos/SDIC_RGB_highres_blackback.png" style="max-width: 162px; text-align:center;" alt="SDIC Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="Images/Logos/yt_icon_rgb.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="Images/Logos/email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>
