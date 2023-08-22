@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<meta name="author" content="Dylan Dowling">
+	<meta name="author email" content="dylantdowling@gmail.com">
+	<meta name="description" content="Sensing & Robotics for Infrastructure (SRI) Lab at the University of California, Los Angeles">
+	<meta name="keywords" content="Sensing, Robots, Infrastructure, SRI, UCLA, University of California Los Angeles, UC, UC Los Angeles">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Home | SRI Lab | University of California, Los Angeles</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="Images/Favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="Images/Favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Images/Favicons/favicon-16x16.png">
+	<link rel="manifest" href="Images/Favicons/site.webmanifest"> 
+	<link rel="mask-icon" href="Images/Favicons/safari-pinned-tab.svg" color="#b2282d">
+	<link rel="shortcut icon" href="Images/Favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#b2282d">
+	<meta name="msapplication-config" content="Images/Favicons/browserconfig.xml">
+	<meta name="theme-color" content="#b2282d">
+
+	<script src="Scripts/mobilenav.js" type="text/javascript"></script> <!-- Mobile dropdown menu script -->
+</head>
+<body>
+	<div id="header">
+		<div class="row">
+			<div class="col-1"></div> 
+			<div class="col-8">
+				<div class="row">
+					<div class="col-2" style="text-align: center;">
+						<a href="https://skandaarvind.github.io/sri-lab/index.html"><img src="https://research.seas.ucla.edu/sri-lab/files/2019/08/SRILab-logo.png"; text-align:center;" alt="SRI Logo" /></a>
+					</div>
+					<div class="col-6" id="navigation">
+						<ul>
+							<li><a href="index.html">home</a></li>
+							<li>
+							<div class="dropdown">
+								<a href="research.html">research</a>
+								<!-- THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+									<div class="dropcontent">
+										<a href="robotics-inspection.html">inspection robotics</a>
+										<a href="robotics-control.html">structure control robotics</a>
+										<a href="dic.html">dic</a>
+										<a href="water-networks.html">water networks</a>
+										<a href="fault-diagnostics.html">fault diagnostics</a>
+										<a href="mobile-sensors.html">mobile sensors</a>
+										<a href="defect-detection.html">defect detection</a>
+									</div>
+								-->
+							</div>
+							<li><a href="people.html">people</a></li>
+							<li><a href="https://scholar.google.ca/citations?user=HNGo_jAAAAAJ&hl=en">publications</a></li>
+							<li><a href="contact.html">contact</a></li>
+						</ul>
+					</div>
+					<div class="col-2" style="text-align: center; margin: 1.75rem 0 0 0;">
+						<a href="https://ucla.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/University_of_California%2C_Los_Angeles_logo.svg/2560px-University_of_California%2C_Los_Angeles_logo.svg.png" style="height: 2.688rem; text-align:center;" alt="UCLA Logo" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	<div id="mobile-header">
+		<div class="row" style="padding:16px;">
+			<div style="width:18%; float:left;"> </div>
+			<div style="width:64%; float: left;">
+				<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/University_of_California%2C_Los_Angeles_logo.svg/2560px-University_of_California%2C_Los_Angeles_logo.svg.png" style="max-width: 125px; text-align:center;" alt="UCLA Logo" /></a>
+			</div>
+			<div style="width:18%; float:right;" >
+				<div class="container-format container" onclick="changeBars(this); dropMenu()" id="menubars">
+					<div class="bar1 container"></div>
+					<div class="bar2 container"></div>
+					<div class="bar3 container"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mobile-navigation" class="mobile-dropdown-content">
+			<ul id="mobile-dropdown-transition" style="margin:0;">
+				<li><a href="index.html">home</a></li>
+				<li><a href="research.html">research</a>
+				<!--THIS SECTION IS DROPDOWN UNDER RESEARCH. Too many research projects prevents easy use of the dropdown. To reinstate, remove the comment lines (aka the open, exclamation mark, dashes and the dashes, close in 9 lines)
+					<ul>
+						<li><a href="robotics-inspection.html">inspection robotics</a></li>
+						<li><a href="robotics-control.html">structure control robotics</a></li>
+						<li><a href="dic.html">dic</a></li>
+						<li><a href="water-networks.html">water networks</a></li>
+						<li><a href="fault-diagnostics.html">fault diagnostics</a></li>
+							<li><a href="mobile-sensors.html">mobile sensors</a></li>
+						<li><a href="defect-detection.html">defect detection</a></li>
+					</ul>
+				-->
+				</li>
+				<li><a href="people.html">people</a></li>
+				<li><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="colorbar">
+		<div id="colorbar17"></div>
+		<div id="colorbar18"></div>
+		<div id="colorbar19"></div>
+		<div id="colorbar20"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6">
+			<h1>Enter Title Here</h1> <!-- Change to match project -->
+			<!-- <h2>Project Information</h2> --> <!-- Note this is the actual title of the header, NOT something to fill in -->
+
+			<div class="row">
+				<div class="col-1"></div>
+					<div class="col-8">
+						<iframe width="100%" height="450" src="./AutonomousVehicleDamping (EDITED)_files/TS2KWmGCsnQ.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+						<!-- <span class="caption">Caption</span> -->
+					</div>
+				<div class="col-1"></div>
+			</div>
+
+			<p>
+Enter Text Here<br>
+				<br>Enter Text Here (Part 2)<br>
+			</p>
+
+			<div class="research">
+				<img src="./AutonomousVehicleDamping (EDITED)_files/placeholder.png" alt="Figure 1"><br>
+				<span class="Figure 1: Prototypical Control System"></span>
+				<img src="./AutonomousVehicleDamping (EDITED)_files/placeholder.png" alt="Figure 2"><br>
+				<span class="Figure 2: Closed-loop control system block diagram"></span>
+			</div>
+
+			<p>Enter Description Here</p>
+
+
+
+			<h2>Enter Subtitle Here</h2>
+			<ul>
+				<li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li>
+			  
+			  
+				
+				
+				
+			  
+ 			 
+				
+
+			<li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li><li> <strong>LName, FInitial</strong> and Narasimhan, S. (YEAR).
+					<a href="https://sri-lab.seas.ucla.edu/" class="publications">Enter Link Title</a>
+					 Title, doi: DOI: ?. vol. ?, no. ?, pp. ?-?. </li></ul>
+
+			<h2>Enter Subtitle Here</h2>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/kjgoorts/" style="display:inline-block;">
+					<img src="./AutonomousVehicleDamping (EDITED)_files/placeholder.png" alt="FName LName">
+					<p class="projectStudents">FName LName</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://scholar.google.ca/citations?hl=en&amp;user=tIPoKpsAAAAJ&amp;view_op=list_works&amp;citft=2&amp;email_for_op=AliAshasi2010%40gmail.com&amp;gmla=AJsN-F7yXlNiG1R7Hr1imT3-cOkf_W7gFE17bjII-2uSiogIe9xFdS2aZQWh64Aoeq0Rs8ULTrjI_qVvThIn-PH98TldfWgZtzG_QsQQTmhDabpEnpf6XQ3ml0V6T4i41X1cWzb08z2Tb1lDodtXNJ9bqooie-4ovTtNeMwo3pPuYXn-kxc5Vdj4wYW_M1z3VZ7wLS3He4xKJXZJ7WYJTK-j99LLwJmZu5sE4Xm2r8BFMoXfc9eDmpFDD2dGtpEWS75Ua5vrMQ4U" style="display:inline-block;">
+					<img src="./AutonomousVehicleDamping (EDITED)_files/placeholder.png" alt="FName LName">
+					<p class="projectStudents">FName LName</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-2">
+					<a href="https://sites.google.com/site/sjphilliwaterloo/home" style="display:inline-block;">
+					<img src="./AutonomousVehicleDamping (EDITED)_files/placeholder.png" alt="FName LName">
+					<p class="projectStudents">FName LName</p>
+					</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<!-- <h2>Collaborators</h2>
+			<ul>
+				<li>Person 1, Affiliation</li>
+				<li>Person 2, Affiliation</li>
+			</ul> -->
+
+		</div>
+		<div class="col-2"></div>
+	</div>
+
+	<br>
+
+	<div id="footer">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-3 footertext" style="margin-top:0.75rem;">
+				UCLA Samueli School of Engineering<br />
+				Department of Civil and Environmental Engineering<br />
+				Los Angeles, CA 90095
+			</div>
+			<div class="col-2">
+				<a href="https://samueli.ucla.edu/people/sriram-narasimhan/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/University_of_California%2C_Los_Angeles_logo.svg/2560px-University_of_California%2C_Los_Angeles_logo.svg.png"; text-align:center;" alt="UCLA Logo" /></a>
+			</div>
+			<div class="col-3" style="margin-top:1.5rem;">
+				<a href="https://www.youtube.com/channel/UCtjwXoHisOEYkMxI7sRIcLg" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" height=32px /></a>
+				<a href="contact.html"><img src="email-icon-bw-inv.png" alt="Email" height=32px /></a>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+</html>
